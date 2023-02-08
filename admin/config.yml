@@ -6,7 +6,22 @@ backend:
 media_folder: 'assets/uploads'
 collections:
   - name: 'posts'
-    label: 'Blog'
+    label: 'Posts'
+    folder: 'pages/_posts/'
+    fields:
+      - { name: Title }
+  - name: 'calls'
+    label: 'Calls'
+    folder: 'pages/calls/'
+    fields:
+      - { name: Title }
+  - name: 'members'
+    label: 'Members'
+    folder: 'pages/members/'
+    fields:
+      - { name: Title }
+  - name: 'posts'
+    label: 'Apparatus'
     folder: 'pages/_posts/'
     fields:
       - { name: Title }
