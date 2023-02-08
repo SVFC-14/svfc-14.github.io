@@ -1,0 +1,25 @@
+---
+layout: base
+---
+
+<section class="appatatus">
+    <h1>Retired Fleet</h1>
+    <hr/>
+    <br/>
+    <div class="apparatusFlex">
+        {% for vehicle in site.apparatus reversed %}
+        {% if vehicle.retired == true  %}
+                <div class="apparatusThumbnail">
+                    <a href="{{ vehicle.url | relative_url }}">
+                        <h1>{{ vehicle.name | escape }}</h1>
+                        <img src="{{ vehicle.thumbnail }}"></img>
+                        <p><span>{{ vehicle.year | escape }}</span><span> </span><span>{{ vehicle.manufacturer | escape }}</span><span> </span><span>{{ vehicle.model | escape }}</span></p>
+                    </a>
+                </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <a href="/apparatus/" class="readMore">
+        <p>View our Active Fleet</p>
+    </a>
+</section>

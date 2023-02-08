@@ -1,0 +1,52 @@
+---
+layout: base
+---
+
+  <header class="member-profile">
+    <h1 class="member-title">{{ page.name | escape }}</h1>
+    <p class="member-meta">
+      {% if page.join_date %}
+      {%- assign date_format = site.minima.date_format | default: "%b %Y" -%}
+        <p>Joined
+            <span>
+                <time class="" datetime="{{ page.join_date | date_to_xmlschema }}" itemprop="datePublished">
+                    {{ page.join_date | date: date_format }}
+                </time>
+            </span>
+        </p>
+        {% endif %}
+        {% if page.position %}
+        <p>Positions:
+          {% for tag in page.position %}
+            {% if forloop.last %}
+                <span>  
+                  {{tag}}
+                </span>
+              {% else %}
+                <span>  
+                  {{tag}},
+                </span>
+              {% endif %}
+            {% endfor %}
+        </p>
+        {% endif %}
+        {% if page.training %}
+        <p>Training:
+          {% for tag in page.training %}
+            {% if forloop.last %}
+                <span>  
+                  {{tag}}
+                </span>
+              {% else %}
+                <span>  
+                  {{tag}},
+                </span>
+              {% endif %}
+            {% endfor %}
+        </p>
+        {% endif %}
+  </header>
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+

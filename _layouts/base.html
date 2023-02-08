@@ -1,0 +1,26 @@
+---
+
+---
+
+<!DOCTYPE html>
+
+{% include head.html %}
+  <body>
+    <div class="layout">
+      {% include nav.html %}
+      <!--Break-->
+      <section class="break" id="break">
+          <div class="container grid"></div>
+      </section>  
+      <!--Showcase-->
+
+        <section class="showcase" id="content">
+          <div class="container grid">
+            {{ content }}
+          </div>
+        </section>
+
+      {% include footer.html %}
+    </div>
+  </body>
+</html>

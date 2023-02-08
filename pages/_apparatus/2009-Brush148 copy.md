@@ -1,0 +1,9 @@
+---
+layout: apparatus-profile
+name: Response 14
+retired: false
+year: 2009
+manufacturer: Chevrolet
+model: Tahoe
+thumbnail: /assets/img/gallery/2009-Repsonse14/1.jpg
+---

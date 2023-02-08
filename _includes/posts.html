@@ -1,0 +1,16 @@
+{% for post in site.posts limit:3 %}
+<div class="posts">
+  <a  href="{{ post.url }}">
+    <h2 class="postTitle">
+        {{ post.title }}
+    </h2>
+    <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_long_string }}</time>
+    <div>
+      <p>
+        {{post.excerpt | strip_html}} 
+      </p>
+    </div>
+  </a>
+</div>
+<br>
+{% endfor %}

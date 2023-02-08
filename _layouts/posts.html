@@ -1,0 +1,64 @@
+---
+layout: base
+---
+{% assign date_year = site.minima.date_format | default: "%Y" %}
+{% assign currentYear = site.time  | date: "%Y" %}
+<div class="yearPages">
+  <h1>Filter by Year</h1>
+  <ul>
+    <li class="postFilter" id="all-nav" onclick="postsYearFilter(this.id)">
+      All
+    </li>
+    {% assign nav_post_years = "" | split: ',' %}
+    {% for posts in site.posts %}
+    {% assign year = posts.date | date: date_year %}
+        {% if nav_post_years contains year %} 
+          {% else %}
+          {% assign nav_post_years = nav_post_years | push: year %}
+            {% if year == currentYear %}
+              <li class="postFilter selected" id="{{year}}-nav" onclick="postsYearFilter(this.id)">
+                {{year}}
+              </li>
+
+            {% else %}
+
+              <li class="postFilter" id="{{year}}-nav" onclick="postsYearFilter(this.id)">
+                {{year}}
+              </li>
+
+          {% endif %}  
+        {% endif %} 
+    {% endfor %}
+  </ul>
+</div>
+{% for post in site.posts  %}
+    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+    {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
+    {% if forloop.first %}
+      <ul class="dvidedPosts" id="{{this_year}}">
+      {% endif %}
+      <li>  
+        <div class="posts">
+          <a  href="{{ post.url }}">
+            <h2 class="postTitle">
+              {{ post.title }}
+            </h2>
+            <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_long_string }}</time>
+            <div>
+              <p>
+                {{post.excerpt | strip_html}} 
+              </p>
+            </div>
+          </a>
+          <br>
+        </div>
+      </li>
+      {% if forloop.last %}
+      </ul>
+    {% else %}
+      {% if this_year != next_year %}
+      </ul>
+      <ul class="dvidedPosts"  style="display: none;" id="{{this_year | minus: 1}}">
+      {% endif %}
+    {% endif %}
+{% endfor %}
