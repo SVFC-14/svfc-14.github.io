@@ -1,6 +1,6 @@
 ---
-name: Firstname Lastname
-position: [Active Member, Life Member, Board Member]
+name: Leanne Collins
+position: [Former Member]
 layout: profile
 join_date: YYYY-MM-DD 00:00:00 -400
 profile: /assets/img/members/default.png

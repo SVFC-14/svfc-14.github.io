@@ -1,8 +1,8 @@
 ---
-name: Stanley Via
+name: Jacob Guertler
 position: [Active Member]
 layout: profile
-join_date:
+join_date: YYYY-MM-DD 00:00:00 -400
 profile: /assets/img/members/default.png
 ---
 Some information

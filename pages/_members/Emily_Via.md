@@ -1,6 +1,6 @@
 ---
 name: Emily Via
-position: [Active Member, EMS Lieutenant]
+position: [Active Member]
 layout: profile
 join_date: 
 profile: /assets/img/members/default.png
