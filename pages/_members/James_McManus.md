@@ -3,6 +3,9 @@ name: James McManus
 position: [Active Member, EMS Captain]
 layout: profile
 join_date: 2015-12-04 00:00:00 -400
+training: [NREMT, VA EMT, CPR, AED]
 profile: /assets/img/members/james_mcmanus.png
 ---
-Some information
+James comes to our neck of the woods from New York, but we wont hold that against him.
+
+James is a integral part of the Swoope team and is always there to lend a helping hand.

@@ -37,6 +37,7 @@ collections:
 
 exclude:
   - Templates
+  - UserEditor
 call_threshhold: 30
 
 # exclude:

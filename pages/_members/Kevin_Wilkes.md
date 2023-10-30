@@ -1,8 +1,17 @@
 ---
 name: Kevin Wilkes
-position: [Active Member, Life Member, Safety Officer]
+position: [Active Member, Life Member, Safety Officer, Chief Emeritus]
 layout: profile
 join_date: 2005-09-06 00:00:00 -400
+training: [Fire Officer 3, Fire Instructor 2, Fire Inspector 2, Firefighter 2, HazMat Operationss, ARFF, EVOC V Instructor, Driver/Operator-Pumper/Aerial/ARFF/Mobile Water Supply, ICS 300 400, Public Safety Telecommunicator II, VDOT/VSP SHRP2 Instructor, USAF School of Aerospace Medicine - Technician, US Army Military Police School, VSP Fusion Liaison Officer, Nationally Registered, VA EMT, DE EMT-B]
 profile: /assets/img/members/kevin_wilkes.png
 ---
-Some information
+Chief Wilkes began his fire service career in 1991, while in the Police Academy for the City of Wilmington, Delaware. During this time all city police officers were required to complete a 24-hour Basic Firefighter Course. Four years later, Wilkes joined the Hockessin Fire Company, Station 19, located in Hockessin, Delaware. A year and a half later, Wilkes then transferred to the Mill Creek Fire Company where he and his then fiance, Tammy Onder, purchased their first home in the Mill Creek fire district.
+
+It wasn't long before Wilkes rose to the rank of Fire Captain with the third busiest fire company in the state. Wilkes was presented with numerous awards and decorations top 10 responder every year, Unit Citation for CPR save, Unit Citation for MVC, and the Green Cross for heroism. Wilkes remains a member of the Mill Creek Fire Company where he spearheads an exchange program, escorting members of the Swoope Volunteer Fire Company and surrounding fire companies to Delaware to ride-a-long with the busy Delaware Company. In return several members of Mill Creek Fire Company have made to long journey to Swoope Volunteer Fire Company where they participate in a ride-a-long program with Swoope.
+
+Wilkes moved to the Staunton area in 2004, where he was employed by the City of Staunton Fire Department. At that time the Swoope Volunteer Fire Company had a roster of approximately 12-14 members. Then one early morning on his way home, Wilkes stopped to offer assistance at a motor vehicle collision scene. The President of Swoope Volunteer Fire Company who was on scene, just happened to pull out an application for Swoope, Wilkes was recruited right then and there at 0130 in the morning on the side of the road.
+
+Once again, it didn't take Wilkes long to expose his leadership skills, experience and knowledge. Soon after joining Swoope, Wilkes found himself asked to fill an open Lieutenant's position. The following year, Wilkes was elected Captain of the fire company. This is where Wilkes really rolled his sleeves up and got to work. In 2009, Wilkes acquired a Chevrolet Suburban from our friends at the Mill Creek Fire Company, to be put in service at Swoope's first emergency medical services response vehicle.
+
+Also that same year, Wilkes received federal, state, and local funding to replace a 1979 retired milk truck, used as a tanker, with a new 2009 International Work Star, 2000 gallon tanker, a 1984 Dodge stick shift brush truck for a new 2009 Ford F-350 diesel extended cab dually, a 1979 gasoline engine stick shift fire engine for a 1984 Mack CF6 fully loaded fire engine. Wilkes also placed in service a new EMS quick response vehicle a new 2009 Chevrolet Tahoe.

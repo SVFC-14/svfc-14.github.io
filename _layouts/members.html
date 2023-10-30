@@ -222,6 +222,32 @@ layout: base
         {% endfor %}
     </div>
     <br>
+    <h1>Probationary & Junior Members</h1>
+    <hr/>
+    <br/>
+    <div class="membershipFlex">
+        {% for member in site.members %}
+        {% if member.position contains "Junior Member"  %}
+                <div class="memberImg">
+                    <a href="{{ member.url | relative_url }}">
+                        <img src="{{ member.profile }}"></img>
+                        <h1>{{ member.name | escape }}</h1>
+                    </a>
+                </div>
+        {% endif %}
+        {% endfor %}
+        {% for member in site.members %}
+        {% if member.position contains "Probationary Member"  %}
+                <div class="memberImg">
+                    <a href="{{ member.url | relative_url }}">
+                        <img src="{{ member.profile }}"></img>
+                        <h1>{{ member.name | escape }}</h1>
+                    </a>
+                </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <br>
     <h1>Lifetime Members</h1>
     <hr/>
     <br/>

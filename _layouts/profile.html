@@ -2,51 +2,65 @@
 layout: base
 ---
 
-  <header class="member-profile">
-    <h1 class="member-title">{{ page.name | escape }}</h1>
-    <p class="member-meta">
-      {% if page.join_date %}
-      {%- assign date_format = site.minima.date_format | default: "%b %Y" -%}
-        <p>Joined
-            <span>
-                <time class="" datetime="{{ page.join_date | date_to_xmlschema }}" itemprop="datePublished">
-                    {{ page.join_date | date: date_format }}
-                </time>
-            </span>
-        </p>
-        {% endif %}
-        {% if page.position %}
-        <p>Positions:
-          {% for tag in page.position %}
-            {% if forloop.last %}
-                <span>  
-                  {{tag}}
+<div class="member-profile">
+    <div class="member-header">
+      <div class="member-pic">
+        <img src="{{ page.profile }}"></img>
+      </div>
+      <div class="member-meta">
+        <div class="member-name">
+          <p class="member-title">{{ page.name | escape }}</p>
+        </div>
+        <div class="member-joindate">
+          {% if page.join_date %}
+          {%- assign date_format = site.minima.date_format | default: "%b %Y" -%}
+            <p class="memberText">Joined
+                <span>
+                    <time class="memberText" datetime="{{ page.join_date | date_to_xmlschema }}" itemprop="datePublished">
+                        {{ page.join_date | date: date_format }}
+                    </time>
                 </span>
-              {% else %}
-                <span>  
-                  {{tag}},
-                </span>
-              {% endif %}
-            {% endfor %}
-        </p>
-        {% endif %}
-        {% if page.training %}
-        <p>Training:
-          {% for tag in page.training %}
-            {% if forloop.last %}
-                <span>  
-                  {{tag}}
-                </span>
-              {% else %}
-                <span>  
-                  {{tag}},
-                </span>
-              {% endif %}
-            {% endfor %}
-        </p>
-        {% endif %}
-  </header>
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
-  </div>
+            </p>
+            {% endif %}
+        </div>
+        <br>
+        <div class="member-rank">
+          {% if page.position %}
+            {% for tag in page.position %}
+              {% if forloop.last %}
+                  <span class="memberText">  
+                    {{tag}}
+                  </span>
+                {% else %}
+                  <span class="memberText">  
+                    {{tag}},
+                  </span>
+                {% endif %}
+              {% endfor %}
+          {% endif %}
+        </div>
+        <br>
+        <div class="member-training">
+          {% if page.training %}
+            {% for tag in page.training %}
+              {% if forloop.last %}
+                  <span class="memberText">  
+                    {{tag}}
+                  </span>
+                {% else %}
+                  <span class="memberText">  
+                    {{tag}},
+                  </span>
+                {% endif %}
+              {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <br>
+    <hr>
+    <div class="member-bio">
+      {{ content }}
+    </div>
+</div>
 
