@@ -399,11 +399,50 @@ img{
     border-radius: 10px;
 }
 
+/* Profiles */
+.member-profile{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
 
 
+}
 
+.member-header{
 
+    display: flex;
+    align-items: stretch;
+}
+.member-pic{
+    padding-right: 15px;
+}
 
+.member-pic img{
+    width: 15em;
+    height: auto;
+    border-radius: 35px;
+    padding-top: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+    align-items: center;
+}
+.member-meta{
+    flex:1;
+    padding-left: 10px;
+}
+.memberText{
+    margin: 0px;
+    font-size: 20px;
+}
+.member-title{
+    margin-top: 0px;
+    font-size: 30px;
+}
+.member-bio{
+    font-size: 25px;
+}
 
 /* Call Volume*/
 .CallVolume{
@@ -445,14 +484,6 @@ img{
     height: 100%;
 
 }
-
-
-
-
-
-
-
-
 
 .about p,h1,h2,h3,h4,h5{
     text-align:left;
