@@ -4,7 +4,7 @@ position: [Active Member, Life Member, Safety Officer, Chief Emeritus]
 layout: profile
 join_date: 2005-09-06 00:00:00 -400
 training: [Fire Officer 3, Fire Instructor 2, Fire Inspector 2, Firefighter 2, HazMat Operationss, ARFF, EVOC V Instructor, Driver/Operator-Pumper/Aerial/ARFF/Mobile Water Supply, ICS 300 400, Public Safety Telecommunicator II, VDOT/VSP SHRP2 Instructor, USAF School of Aerospace Medicine - Technician, US Army Military Police School, VSP Fusion Liaison Officer, Nationally Registered, VA EMT, DE EMT-B]
-profile: /assets/img/members/kevin_wilkes.png
+profile: /assets/img/members/kevin_wilkes/0.png
 ---
 Chief Wilkes began his fire service career in 1991, while in the Police Academy for the City of Wilmington, Delaware. During this time all city police officers were required to complete a 24-hour Basic Firefighter Course. Four years later, Wilkes joined the Hockessin Fire Company, Station 19, located in Hockessin, Delaware. A year and a half later, Wilkes then transferred to the Mill Creek Fire Company where he and his then fiance, Tammy Onder, purchased their first home in the Mill Creek fire district.
 

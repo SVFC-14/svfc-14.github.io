@@ -4,7 +4,7 @@ position: [Active Member, Secretary]
 layout: profile
 join_date: 2015-11-03 00:00:00 -400
 training: [Firefighter 1, Firefighter 2, HazMat Awareness, HazMat Operations, Vehicle Rescue, CPR]
-profile: /assets/img/members/courtney_lamay.png
+profile: /assets/img/members/courtney_lamay/0.png
 ---
 Courtney joined our Swoope family in November of 2015 and has already received several firefighter certifications. Courtney enjoys helping people in need and is becoming one of our active members.
 

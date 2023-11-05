@@ -4,7 +4,7 @@ position: [Active Member, Vice President]
 layout: profile
 join_date: 2011-10-04 00:00:00 -400
 training: [Vehicle Extrication, CPR, AED]
-profile: /assets/img/members/ruth_martin.png
+profile: /assets/img/members/ruth_martin/0.png
 ---
 Ruth joined our Swoope family in December 2011 and has been a leader ever since. Ruth will always greet you with a great big smile and she will be there to help out her teammates whenever they need it.
 
