@@ -7,7 +7,7 @@
 title: Swoope Volunteer Fire Company
 email: svfc@swoopefire.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Swoope Volunteer Fire Comapny
+  © 2010-2023 Swoope Volunteer Fire Comapny. All rights reserved.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
