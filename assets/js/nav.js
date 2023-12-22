@@ -23,6 +23,8 @@ function toggleMobileMenu(menu) {
   menu.classList.toggle('open');
   setNavBG();
 }
+
+// this function is called by the OnClick method on the Year li elemtents, "this.id" is passed into the function
 function postsYearFilter(filter) {
   // Change Year Nav Background Color
   var navCollection = document.getElementsByClassName("postFilter");
@@ -38,9 +40,20 @@ function postsYearFilter(filter) {
     {
       postsCollection[i].style.display = "none";
     }
+    // This gets the clicked year and removes the "-nav" from is id to get the year, i.e. "2022-nav" -> "2022"
+    
     var showYear = filter.substring(0, filter.length - 4)
-    var shownPosts = document.getElementById(showYear);
-    shownPosts.style.display = "block";
+    console.log(showYear)
+    // Determines if the selected filter is "All" or the dynamically generated year
+    if(showYear !== "all"){
+      var shownPosts = document.getElementById(showYear);
+      shownPosts.style.display = "block";
+    }else{
+      for(var i = (postsCollection.length - 1); i >= 0; i--)
+      {
+        postsCollection[i].style.display = "block";
+      }
+    }
 }
 function randomBG(){
   const x = "/assets/img/bg.jpg"
