@@ -1,5 +1,6 @@
 ---
-name: Stanley Via
+firstname: Stanley
+lastname: Via
 position: [Active Member]
 layout: profile
 join_date:

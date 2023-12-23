@@ -1,5 +1,6 @@
 ---
-name: Kerri Lindsay
+firstname: Kerri
+lastname: Lindsay
 position: [Active Member]
 layout: profile
 join_date: YYYY-MM-DD 00:00:00 -400

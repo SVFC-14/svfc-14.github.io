@@ -1,5 +1,6 @@
 ---
-name: Michael Buchanan
+firstname: Michael
+lastname: Buchanan
 position: [Life Member]
 layout: profile
 join_date:

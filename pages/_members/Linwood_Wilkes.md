@@ -1,5 +1,6 @@
 ---
-name: Linwood Wilkes
+firstname: Linwood
+lastname: Wilkes
 position: [Active Member, Board Member]
 layout: profile
 join_date:

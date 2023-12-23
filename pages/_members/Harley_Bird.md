@@ -1,5 +1,6 @@
 ---
-name: Harley Bird
+firstname: Harley
+lastname: Bird
 position: [Active Member, Lieutenant]
 layout: profile
 join_date: 2014-10-07 00:00:00 -400

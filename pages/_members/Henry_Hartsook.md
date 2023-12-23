@@ -1,5 +1,6 @@
 ---
-name: Henry Harsook
+firstname: Henry
+lastname: Harsook
 position: [Life Member]
 layout: profile
 join_date:

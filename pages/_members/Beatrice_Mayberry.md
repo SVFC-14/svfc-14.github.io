@@ -1,5 +1,6 @@
 ---
-name: Beatrice Mayberry
+firstname: Beatrice
+lastname: Mayberry
 position: [Active Member]
 layout: profile
 join_date: 

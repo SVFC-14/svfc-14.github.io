@@ -1,5 +1,6 @@
 ---
-name: Ryan Cichon
+firstname: Ryan
+lastname: Cichon
 position: [Active Member]
 layout: profile
 join_date: 2017-07-03 00:00:00 -400

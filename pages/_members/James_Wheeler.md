@@ -1,5 +1,6 @@
 ---
-name: James Wheeler
+firstname: James
+lastname: Wheeler
 position: [Life Member]
 layout: profile
 join_date:

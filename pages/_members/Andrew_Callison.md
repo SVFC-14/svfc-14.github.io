@@ -1,5 +1,6 @@
 ---
-name: Andrew Callison
+firstname: Andrew
+lastname: Callison
 position: [Former Member]
 layout: profile
 join_date: YYYY-MM-DD 00:00:00 -400

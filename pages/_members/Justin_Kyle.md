@@ -1,5 +1,6 @@
 ---
-name: Justin Kyle
+firstname: Justin
+lastname: Kyle
 position: [Life Member]
 layout: profile
 join_date:

@@ -1,5 +1,6 @@
 ---
-name: Joel Salatin
+firstname: Joel
+lastname: Salatin
 position: [Board Member]
 layout: profile
 join_date:

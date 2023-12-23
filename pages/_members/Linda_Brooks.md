@@ -1,5 +1,6 @@
 ---
-name: Linda Brooks
+firstname: Linda
+lastname: Brooks
 position: [Active Member, Life Member, Training Officer]
 layout: profile
 join_date: 1998-10-06 00:00:00 -400

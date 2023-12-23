@@ -1,5 +1,6 @@
 ---
-name: Charles Puffenbarger
+firstname: Charles
+lastname: Puffenbarger
 position: [Life Member]
 layout: profile
 join_date:

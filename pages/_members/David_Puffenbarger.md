@@ -1,5 +1,6 @@
 ---
-name: David Puffenbarger
+firstname: David
+lastname: Puffenbarger
 position: [Life Member]
 layout: profile
 join_date:

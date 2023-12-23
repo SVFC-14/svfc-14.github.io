@@ -1,5 +1,6 @@
 ---
-name: Jim Williams
+firstname: Jim
+lastname: Williams
 position: [Board Member]
 layout: profile
 join_date:

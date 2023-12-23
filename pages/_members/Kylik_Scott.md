@@ -1,5 +1,6 @@
 ---
-name: Kylik Scott
+firstname: Kylik
+lastname: Scott
 position: [Active Member, Captain]
 layout: profile
 join_date: YYYY-MM-DD 00:00:00 -400

@@ -1,5 +1,6 @@
 ---
-name: Nate Ransome
+firstname: Nate
+lastname: Ransome
 position: [Life Member]
 layout: profile
 join_date:

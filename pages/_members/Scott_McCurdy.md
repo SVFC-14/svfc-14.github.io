@@ -1,5 +1,6 @@
 ---
-name: Scott McCurdy
+firstname: Scott
+lastname: McCurdy
 position: [Active Member]
 layout: profile
 join_date: 2011-08-02 00:00:00 -400

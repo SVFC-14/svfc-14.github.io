@@ -1,5 +1,6 @@
 ---
-name: James McManus
+firstname: James
+lastname: McManus
 position: [Active Member, EMS Captain]
 layout: profile
 join_date: 2015-12-04 00:00:00 -400

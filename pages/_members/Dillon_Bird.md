@@ -1,5 +1,6 @@
 ---
-name: Dillon Bird
+firstname: Dillon
+lastname: Bird
 position: [Active Member, Lieutenant]
 layout: profile
 join_date: 2012-01-03 00:00:00 -400

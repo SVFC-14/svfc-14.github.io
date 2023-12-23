@@ -1,5 +1,6 @@
 ---
-name: Neal Hewitt
+firstname: Neal
+lastname: Hewitt
 position: [Life Member]
 layout: profile
 join_date:

@@ -1,5 +1,6 @@
 ---
-name: Larry Rodzinka
+firstname: Larry
+lastname: Rodzinka
 position: [Active Member]
 layout: profile
 join_date: 2017-06-06 00:00:00 -400

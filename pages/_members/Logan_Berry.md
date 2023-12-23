@@ -1,5 +1,6 @@
 ---
-name: Logan Berry
+firstname: Logan
+lastname: Berry
 position: [Former Member]
 layout: profile
 join_date: YYYY-MM-DD 00:00:00 -400

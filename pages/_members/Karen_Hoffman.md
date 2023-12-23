@@ -1,5 +1,6 @@
 ---
-name: Karen Hoffman
+firstname: Karen
+lastname: Hoffman
 position: [Active Member, President]
 layout: profile
 join_date: 2013-01-01 00:00:00 -400

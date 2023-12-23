@@ -1,5 +1,6 @@
 ---
-name: Jerry Botkin
+firstname: Jerry
+lastname: Botkin
 position: [Life Member]
 layout: profile
 join_date:

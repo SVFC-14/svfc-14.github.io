@@ -1,5 +1,6 @@
 ---
-name: Teresa Shipe
+firstname: Teresa
+lastname: Shipe
 position: [Life Member]
 layout: profile
 join_date:

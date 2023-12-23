@@ -1,5 +1,6 @@
 ---
-name: Emily Via
+firstname: Emily
+lastname: Via
 position: [Active Member]
 layout: profile
 join_date: 

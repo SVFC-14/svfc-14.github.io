@@ -1,5 +1,6 @@
 ---
-name: Kenny Puffenbarger
+firstname: Kenny
+lastname: Puffenbarger
 position: [Life Member]
 layout: profile
 join_date:

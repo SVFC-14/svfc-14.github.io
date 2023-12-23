@@ -1,5 +1,6 @@
 ---
-name: Clay Atkins
+firstname: Clay
+lastname: Atkins
 position: [Former Member]
 layout: profile
 join_date: YYYY-MM-DD 00:00:00 -400

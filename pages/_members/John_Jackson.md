@@ -1,5 +1,6 @@
 ---
-name: John Jackson
+firstname: John
+lastname: Jackson
 position: [Active Member]
 layout: profile
 join_date: 2017-03-07 00:00:00 -0400

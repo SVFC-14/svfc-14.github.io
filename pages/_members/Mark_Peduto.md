@@ -1,5 +1,6 @@
 ---
-name: Mark Peduto
+firstname: Mark
+lastname: Peduto
 position: [Life Member]
 layout: profile
 join_date:

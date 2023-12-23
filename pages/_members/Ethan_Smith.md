@@ -1,5 +1,6 @@
 ---
-name: Ethan Smith
+firstname: Ethan
+lastname: Smith
 position: [Active Member]
 layout: profile
 join_date: 

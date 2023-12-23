@@ -1,5 +1,6 @@
 ---
-name: Ryan Folweiler
+firstname: Ryan
+lastname: Folweiler
 position: [Active Member, Chief]
 layout: profile
 join_date: 2009-07-05 00:00:00 -400

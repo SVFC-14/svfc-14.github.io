@@ -1,5 +1,6 @@
 ---
-name: Harold Campbell
+firstname: Harold
+lastname: Campbell
 position: [Former Member]
 layout: profile
 join_date: YYYY-MM-DD 00:00:00 -400

@@ -1,5 +1,6 @@
 ---
-name: Jimmy Johnson
+firstname: Jimmy
+lastname: Johnson
 position: [Life Member]
 layout: profile
 join_date:

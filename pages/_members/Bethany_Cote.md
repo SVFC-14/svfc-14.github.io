@@ -1,5 +1,6 @@
 ---
-name: Bethany Cote
+firstname: Bethany
+lastname: Cote
 position: [Former Member]
 layout: profile
 join_date: YYYY-MM-DD 00:00:00 -400

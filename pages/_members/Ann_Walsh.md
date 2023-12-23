@@ -1,5 +1,6 @@
 ---
-name: Ann Walsh
+firstname: Ann
+lastname: Walsh
 position: [Active Member]
 layout: profile
 join_date: YYYY-MM-DD 00:00:00 -400

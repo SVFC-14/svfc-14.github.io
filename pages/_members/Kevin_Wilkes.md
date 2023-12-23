@@ -1,5 +1,6 @@
 ---
-name: Kevin Wilkes
+firstname: Kevin
+lastname: Wilkes
 position: [Active Member, Life Member, Safety Officer, Chief Emeritus]
 layout: profile
 join_date: 2005-09-06 00:00:00 -400

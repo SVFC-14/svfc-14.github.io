@@ -1,5 +1,6 @@
 ---
-name: Jason Melton
+firstname: Jason
+lastname: Melton
 position: [Active Member]
 layout: profile
 join_date: YYYY-MM-DD 00:00:00 -400

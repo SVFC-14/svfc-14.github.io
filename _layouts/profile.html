@@ -9,7 +9,7 @@ layout: base
       </div>
       <div class="member-meta">
         <div class="member-name">
-          <p class="member-title">{{ page.name | escape }}</p>
+          <p class="member-title">{{ page.firstname | escape }} {{ page.lastname | escape }}</p>
         </div>
         <div class="member-joindate">
           {% if page.join_date %}

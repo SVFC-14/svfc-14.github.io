@@ -1,5 +1,6 @@
 ---
-name: Courtney LaMay
+firstname: Courtney
+lastname: LaMay
 position: [Active Member, Secretary]
 layout: profile
 join_date: 2015-11-03 00:00:00 -400
