@@ -218,12 +218,11 @@
         "ICS 400"
     ];
 
-
+    
     function updateResult(){
         // Set name
         var firstName = document.getElementById("firstName").value;
         var lastName = document.getElementById("lastName").value;
-        var name = firstName + " " + lastName
 
         // Set custom picture
         var picPath = "/assets/img/members/default.png"
@@ -248,7 +247,7 @@
         var bio = document.getElementById('bio').value
 
         // Transform fields to Markdown
-        output.value = `---\nname: ${name}\nposition: [${posSelected.toString()}]\nlayout: profile\njoin_date: ${joinDate} 00:00:00 -400\ntraining: [${trainSelected.toString()}]\nprofile: ${picPath}\n---\n${bio}`
+        output.value = `---\nfirstname: ${firstName}\nlastname: ${lastName}\nposition: [${posSelected.toString()}]\nlayout: profile\njoin_date: ${joinDate} 00:00:00 -400\ntraining: [${trainSelected.toString()}]\nprofile: ${picPath}\n---\n${bio}`
     }
 
     const trainingSelect = document.getElementById("trainingSelect");
