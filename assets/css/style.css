@@ -243,6 +243,7 @@ img{
 .apparatusThumbnail img{
     max-width: 40em;
     max-height: 23em;
+    aspect-ratio: 3 / 2;
     object-fit:cover;
     border-radius: 35px;
 }
