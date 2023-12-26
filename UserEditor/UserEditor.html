@@ -132,6 +132,10 @@
             <div class="padder">
                 <div id="name">
                     <div>
+                        <p>Edit an existing user? <span><input type="file" id="fileInput" /></span></p>
+                    </div>
+                    <br>
+                    <div>
                         <label for="firstname">First name:</label>
                         <input type="text" id="firstName" name="firstName" class="inputs formInput">
                     </div>
@@ -191,7 +195,7 @@
         "EMT-B",
         "EMT-A",
         "ParaMedic",
-        "NREMT ",
+        "NREMT",
         "HazMat Operations",
         "HazMat Awareness",
         "Firefighter I",
@@ -218,7 +222,103 @@
         "ICS 400"
     ];
 
-    
+    document.getElementById('fileInput').addEventListener('change', handleFileSelect);
+    function handleFileSelect(event) {
+    const fileInput = event.target;
+    const file = fileInput.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+        const fileContent = e.target.result;
+        // console.log(fileContent);
+        // You can do something with the file content here
+        var metadata = parseUserMarkdownMetadata(fileContent);
+            console.log(metadata);
+            document.getElementById("firstName").value = metadata.firstname
+            document.getElementById("lastName").value = metadata.lastname
+            document.getElementById('defPic').checked = metadata.profile
+            document.getElementById('joinDate').value = metadata.join_date.substring(0,10)
+            document.getElementById('bio').value = metadata.bio
+            metadata.position.forEach((label) => {
+                var inputElement = document.querySelector('input[value="' + label + '"]');
+                if(inputElement){
+                    inputElement.checked = true
+                }else if(label == ""){
+                    return
+                }else{
+                    alert(`${label} is not a valid position, Please add it to the dictionary`)
+                }
+            });
+            metadata.training.forEach((label) => {
+                var inputElement = document.querySelector('input[value="' + label + '"]');
+                if(inputElement){
+                    inputElement.checked = true
+                }else if(label == ""){
+                    return
+                }else{
+                    alert(`${label} is not a valid cert, Please add it to the dictionary`)
+                }
+            });
+            updateResult();
+        };
+        reader.readAsText(file);
+    } else {
+        console.log('No file selected');
+    }
+    }
+    // Markdown importer/Parser
+    const parseUserMarkdownMetadata = markdown => {
+        // Regular expression to match metadata at the beginning of the file
+        const metadataRegex = /^---([\s\S]*?)---/;
+        const metadataMatch = markdown.match(metadataRegex);
+        // If there is no metadata, return an empty object
+        if (!metadataMatch) {
+            return {};
+        }
+        // Split the metadata into lines
+        const metadataLines = metadataMatch[1].split("\n");
+
+        // Use reduce to accumulate the metadata as an object
+        const metadata = metadataLines.reduce((accumulate, line) => {
+            // Split the line into key-value pairs
+            const [key, value] = line.split(":").map(part => part.trim());
+            switch (key) {
+                case "position":
+                // TODO split the positions into JSON array
+                    var y = value
+                    y = y.replace(/[\[\]']+/g,'')
+                    var x = new Array();
+                    x = y.split(",");
+                    accumulate[key] = x
+                    break;
+                case "training":
+                // TODO split the trainings into JSON array
+                    var y = value
+                    y = y.replace(/[\[\]']+/g,'')
+                    var x = new Array();
+                    x = y.split(",");
+                    accumulate[key] = x
+                    break;
+                case "profile":
+                    if (value != "/assets/img/members/default/0.png"){
+                        accumulate[key] = true
+                    }else{
+                        accumulate[key] = false
+                    }
+                    break;
+                default:
+                    if(key) accumulate[key] = value;
+                    break;
+            }
+            const markdownBio = markdown.replace(metadataRegex, "");
+            accumulate["bio"] = markdownBio.trim(4);
+            return accumulate;
+        }, {});
+        // Return the metadata object
+        return metadata;
+        };
     function updateResult(){
         // Set name
         var firstName = document.getElementById("firstName").value;
@@ -227,7 +327,7 @@
         // Set custom picture
         var picPath = "/assets/img/members/default.png"
         if(document.getElementById('defPic').checked){
-            picPath = `/assets/img/members/${firstName.toLowerCase()}_${lastName.toLowerCase()}.png`
+            picPath = `/assets/img/members/${firstName.toLowerCase()}_${lastName.toLowerCase()}/0.png`
         }
 
         // Set Positions

@@ -1,7 +1,7 @@
 ---
 firstname: James
 lastname: McManus
-position: [Active Member, EMS Captain]
+position: [Active Member,EMS Captain]
 layout: profile
 join_date: 2015-12-04 00:00:00 -400
 training: [NREMT, VA EMT, CPR, AED]
