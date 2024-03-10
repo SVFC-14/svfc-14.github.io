@@ -20,6 +20,7 @@ window.onload = () => {
   //randomBG();
   const today = new Date();
   holiday(today)
+  updateCopyright(today.getFullYear());
   console.log("Swoope Volunteer Fire Company");
   console.log("All Rights Reserved " + today.getFullYear());
   console.log("---");
@@ -31,6 +32,11 @@ function toggleMobileMenu(menu) {
   menuOpen = !menuOpen;
   menu.classList.toggle('open');
   setNavBG();
+}
+
+function updateCopyright(year){
+  var copyrightFooter = document.getElementById("copyright");
+  copyrightFooter.innerHTML = "© 2010-" + year + " Swoope Volunteer Fire Comapny. All rights reserved."
 }
 
 // this function is called by the OnClick method on the Year li elemtents, "this.id" is passed into the function

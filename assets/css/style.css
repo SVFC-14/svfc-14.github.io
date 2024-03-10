@@ -515,6 +515,18 @@ img{
     background-color: var(--primaryNav);
 }
 
+.footer{
+    display: flex;
+}
+.siteCopyright{
+    flex: 1;
+}
+.siteCopyright p{
+    text-align: right;
+}
+.siteDescription{
+    flex: 1;
+}
 
 /* Tablet and Mobile*/
 @media only screen and (max-width: 1023px) {
