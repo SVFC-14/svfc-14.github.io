@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>User Editor</title>
 </head>
 <style>
     html, body, div, span, applet, object, iframe,
@@ -326,7 +326,7 @@
         var lastName = document.getElementById("lastName").value;
 
         // Set custom picture
-        var picPath = "/assets/img/members/default.png"
+        var picPath = "/assets/img/members/default/0.png"
         if(document.getElementById('defPic').checked){
             picPath = `/assets/img/members/${firstName.toLowerCase()}_${lastName.toLowerCase()}/0.png`
         }
