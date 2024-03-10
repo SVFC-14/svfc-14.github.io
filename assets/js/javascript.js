@@ -7,10 +7,19 @@ const content = document.getElementById("content");
 window.onscroll = () => {
   setNavBG();
 }
-
+function holiday(date){
+  if(date.getMonth() === 11 && (date.getDate() === 24 || date.getDate() === 25)){
+    console.log("Merry Christmas")
+  }else if(date.getMonth() === 1 && date.getDate() === 1){
+    console.log("Happy New Years")
+  }else if(date.getMonth() === 6 && date.getDate() === 6){
+    console.log("Its the 4th")
+  }
+}
 window.onload = () => {
   //randomBG();
   const today = new Date();
+  holiday(today)
   console.log("Swoope Volunteer Fire Company");
   console.log("All Rights Reserved " + today.getFullYear());
   console.log("---");
