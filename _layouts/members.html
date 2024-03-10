@@ -221,32 +221,51 @@ layout: base
         {% endif %}
         {% endfor %}
     </div>
-    <br>
-    <h1>Probationary & Junior Members</h1>
-    <hr/>
-    <br/>
-    <div class="membershipFlex">
-        {% for member in site.members %}
-        {% if member.position contains "Junior Member"  %}
-                <div class="memberImg">
-                    <a href="{{ member.url | relative_url }}">
-                        <img src="{{ member.profile }}"></img>
-                        <h1>{{ member.firstname | escape }} {{ member.lastname | escape }}</h1>
-                    </a>
-                </div>
+
+    <!-- Special Operation to determine if the number of Probationary Members and Junior Members is more than 0 -->
+    {% assign probationary_and_junior = 0 %}
+    {% for member in site.members %}
+        {% if member.position contains "Junior Member" %}
+            {% assign probationary_and_junior = probationary_and_junior | plus: 1 %}
         {% endif %}
-        {% endfor %}
-        {% for member in site.members %}
-        {% if member.position contains "Probationary Member"  %}
-                <div class="memberImg">
-                    <a href="{{ member.url | relative_url }}">
-                        <img src="{{ member.profile }}"></img>
-                        <h1>{{ member.firstname | escape }} {{ member.lastname | escape }}</h1>
-                    </a>
-                </div>
+        {% if member.position contains "Probationary Member" %}
+            {% assign probationary_and_junior = probationary_and_junior | plus: 1 %}
         {% endif %}
-        {% endfor %}
-    </div>
+    {% endfor %}
+
+    {% if probationary_and_junior > 0 %}
+        <br>
+        <h1>Probationary & Junior Members</h1>
+        
+        <hr/>
+        <br/>
+        <div class="membershipFlex">
+            {% for member in site.members %}
+            {% if member.position contains "Junior Member"  %}
+                    <div class="memberImg">
+                        <a href="{{ member.url | relative_url }}">
+                            <img src="{{ member.profile }}"></img>
+                            <h1>{{ member.firstname | escape }} {{ member.lastname | escape }}</h1>
+                        </a>
+                    </div>
+            {% endif %}
+            {% endfor %}
+            {% for member in site.members %}
+
+
+            {% if member.position contains "Probationary Member" %}
+                    <div class="memberImg">
+                        <a href="{{ member.url | relative_url }}">
+                            <img src="{{ member.profile }}"></img>
+                            <h1>{{ member.firstname | escape }} {{ member.lastname | escape }}</h1>
+                        </a>
+                    </div>
+            {% endif %}
+
+
+            {% endfor %}
+        </div>
+    {% endif %}
     <br>
     <h1>Lifetime Members</h1>
     <hr/>
