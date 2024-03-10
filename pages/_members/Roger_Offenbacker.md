@@ -1,10 +1,9 @@
 ---
 firstname: Roger
 lastname: Offenbacker
-position: [Active Member]
+position: [Active Member,Lieutenant]
 layout: profile
-join_date: YYYY-MM-DD 00:00:00 -400
+join_date: 
 training: []
 profile: /assets/img/members/default/0.png
 ---
-Some information

@@ -1,7 +1,7 @@
 ---
 firstname: Kevin
 lastname: Wilkes
-position: [Active Member,Life Member,Safety Officer,Chief Emeritus]
+position: [Active Member,Life Member,Chief Emeritus]
 layout: profile
 join_date: 2005-09-06 00:00:00 -400
 training: [CPR,AED,EMT-B,NREMT,HazMat Operations,HazMat Awareness,Firefighter I,Firefighter II,Airport Rescue Firefighter,Evoc I,Evoc II,Evoc II,Evoc IV,Evoc V,Mayday,Basic Pump Operator,Driver Pump Operator,ITR Mod 2,Vehicle Extrication,Fire Officer I,Fire Officer II,Fire Officer III,Fire Instructor I,Fire Instructor II,Fire Inspector I,Fire Inspector II,ICS 300,ICS 400]

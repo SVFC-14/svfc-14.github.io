@@ -1,7 +1,7 @@
 ---
-firstname: Jerry
-lastname: Botkin
-position: [Life Member]
+firstname: CL
+lastname: Rexrode
+position: [Active Member,EMS Lieutenant]
 layout: profile
 join_date:
 training: []

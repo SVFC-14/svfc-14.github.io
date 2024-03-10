@@ -1,7 +1,7 @@
 ---
 firstname: Ben
 lastname: Piner
-position: [Active Member,Deputy Chief]
+position: [Active Member,Chief]
 layout: profile
 join_date: 2015-06-02 00:00:00 -400
 training: [Firefighter 1,Firefighter 2,HazMat Operations,HazMat Awareness,Mayday,CPR,EVOC]

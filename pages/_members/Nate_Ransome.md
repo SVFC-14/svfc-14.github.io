@@ -7,4 +7,3 @@ join_date:
 training: []
 profile: /assets/img/members/nate_ransome/0.png
 ---
-Some Information

@@ -7,4 +7,3 @@ join_date:
 training: []
 profile: /assets/img/members/james_wheeler/0.png
 ---
-Some Information

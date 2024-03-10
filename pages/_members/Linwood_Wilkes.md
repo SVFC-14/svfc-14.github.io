@@ -7,4 +7,3 @@ join_date:
 training: []
 profile: /assets/img/members/linwood_wilkes/0.png
 ---
-Some information

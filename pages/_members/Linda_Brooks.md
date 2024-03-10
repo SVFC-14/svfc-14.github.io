@@ -1,7 +1,7 @@
 ---
 firstname: Linda
 lastname: Brooks
-position: [Active Member,Life Member,Training Officer]
+position: [Active Member,Life Member]
 layout: profile
 join_date: 1998-10-06 00:00:00 -400
 training: [Vehicle Rescue,EVOC,CPR]
