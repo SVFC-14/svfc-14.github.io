@@ -124,16 +124,45 @@
     .checksDiv p{
         text-align: center;
     }
-    .posRow{margin-top: 5px;}
+    .posRow{
+        margin-top: 5px;
+    }
+    .builderControl{
+        display: flex;
+    }
+    .builderControl div{
+        flex: 1;
+    }
+    .builderControl div a{
+        float: right;
+    }
+    .builderButton{
+        background-color: var(--primaryColor);
+        color: var(--primaryText);
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+    .builderButton:hover{
+        background-color: var(--primaryHighlight);
+    }
 </style>
 <body>
     <div id="main">
         <div id="left" class="divider">
             <div class="padder">
                 <div id="name">
-                    <div>
-                        <p>Edit an existing user? <span><input type="file" id="fileInput" /></span></p>
+                    <div class="builderControl">
+                        <div>
+                            <!-- <p>Edit an existing user? <span><input class="builderButton" type="file" id="fileInput" /></span></p>  -->
+                            
+                            <input class="builderButton" type="file" id="fileInput" />
+                        </div>
+                        <div>
+                            <a type="button" class="builderButton" id="saveButton" >Save File</a>
+                        </div>
                     </div>
+
                     <br>
                     <div>
                         <label for="firstname">First name:</label>
@@ -343,12 +372,25 @@
 
         // Set Join Date
         var joinDate = document.getElementById('joinDate').value
+        if (!joinDate) {
+            joinDate = ""
+        }else{
+            joinDate = joinDate + " 00:00:00 -400"
+        }
         
         // Set Bio
         var bio = document.getElementById('bio').value
 
         // Transform fields to Markdown
-        output.value = `---\nfirstname: ${firstName}\nlastname: ${lastName}\nposition: [${posSelected.toString()}]\nlayout: profile\njoin_date: ${joinDate} 00:00:00 -400\ntraining: [${trainSelected.toString()}]\nprofile: ${picPath}\n---\n${bio}`
+        output.value = `---\nfirstname: ${firstName}\nlastname: ${lastName}\nposition: [${posSelected.toString()}]\nlayout: profile\njoin_date: ${joinDate}\ntraining: [${trainSelected.toString()}]\nprofile: ${picPath}\n---\n${bio}`
+
+        var fileName = `${firstName}_${lastName}.md`;
+        var fileContent = output.value;
+        var userFile = new Blob([fileContent], {type: 'text/plain'});
+        window.URL = window.URL || window.webkitURL;
+        var dlBtn = document.getElementById("saveButton");
+        dlBtn.setAttribute("href", window.URL.createObjectURL(userFile));
+        dlBtn.setAttribute("download", fileName);
     }
 
     const trainingSelect = document.getElementById("trainingSelect");
