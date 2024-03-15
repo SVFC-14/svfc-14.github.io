@@ -222,6 +222,29 @@ img{
     flex:1;
 
 }
+.apparatus h1{
+    text-align: center;
+    font-size: 2.1875em ;
+}
+.bottomButton{
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bottomButton div{
+    width: 25em;
+    border-radius: 35px;
+    background-color: var(--primaryNav);
+}
+.bottomButton div:hover{
+    background-color: var(--primaryHighlight);
+    
+}
+.bottomButton a{
+    text-align: center;
+}
 .apparatusFlex{
     display: flex;
     flex-direction: row;
@@ -564,6 +587,7 @@ img{
     #siteBadge{
         order: 1;
     }
+
 }
 /* Tablet and Mobile*/
 @media only screen and (max-width: 1023px) {
