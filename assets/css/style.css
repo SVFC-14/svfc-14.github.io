@@ -44,7 +44,6 @@ body{
     height: 100vh;
 }
 
-
 ul{
     list-style-type: none;
 }
@@ -180,7 +179,7 @@ img{
 .mobile-menu {
     display: none;
     position: absolute;
-    top: 50px;
+    top: 90px;
     left: 0;
     height: calc(100vh - 50px);
     width: 100%;
@@ -369,7 +368,8 @@ img{
     flex-direction: row;
     justify-content: left;
     scrollbar-width: 5px;
-    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .yearPages ul::-webkit-scrollbar{
     width: 0px;
@@ -475,7 +475,7 @@ img{
 .container{
     max-width: 87.5em;
     margin: 0 auto;
-    overflow: auto;
+    /* overflow: auto; */
     padding: 0 3.75em;
 }
 .flex{
@@ -513,21 +513,58 @@ img{
 
 .site-footer{
     background-color: var(--primaryNav);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .footer{
     display: flex;
+    flex-direction: row;
 }
 .siteCopyright{
     flex: 1;
-}
-.siteCopyright p{
-    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .siteDescription{
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+#siteBadge{
+    display: flex;
+    flex-basis: fit-content;
+    justify-content: center;
+    align-items: center;
 
+}
+#siteBadge div{
+    width: 100px;
+    height: 100px;
+}
+@media only screen and (max-width: 600px) {
+    #titleImg{
+        content: url("/assets/img/svfc-text-compressed.png");
+    }
+    .footer{
+        flex-direction: column;
+    }
+    .siteCopyright{
+        order: 3;
+
+    }
+    .siteDescription{
+        order: 2;
+
+    }
+    #siteBadge{
+        order: 1;
+    }
+}
 /* Tablet and Mobile*/
 @media only screen and (max-width: 1023px) {
 	/* .showcase{
@@ -547,8 +584,6 @@ img{
     }
     .navExpand{
         height: 100%;
-
-
     }
     .navbar .flex{
         flex-direction: column;
