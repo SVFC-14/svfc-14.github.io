@@ -18,14 +18,3 @@ permalink: /about
 
 ---
 
-<br/><br/>
-
-### Swoope Volunteer Fire Company was intially started by a group of ~## individuals who saw a lack of Fire Prevention and Fire Surpression services in the Swoope VA region, Upon receiving its incorporation status in 1979 the Company operated out of a small building near the intersection of Parkersburg Turnpike and Trinity Point Road.
-
-<br>
-
-### - Starting Vehicle Info -
-
-<br>
-
-### In YEAR, the company aquired the rights to a small service station at 697 Parkersburg Turnpike and proceeded to make this new location the permanent home of Swoope Volunteer Fire Company from that day foward. The initial building was only two bays and a small common room, but later recieved four new bays as part of a new construction and remodling project which also converted the original two bays into a proper hall and living quaters for the volunteers
