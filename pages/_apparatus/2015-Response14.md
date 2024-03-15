@@ -5,5 +5,5 @@ retired: false
 year: 2015
 manufacturer: Chevrolet
 model: Tahoe
-thumbnail: /assets/img/gallery/2015-response14/1.jpg
+thumbnail: /assets/img/gallery/2015-Response14/1.jpg
 ---
