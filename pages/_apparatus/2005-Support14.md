@@ -4,6 +4,6 @@ name: Support 14
 retired: false
 year: 2005
 manufacturer: Ford
-model: F250
+model: F-250
 thumbnail: /assets/img/gallery/2005-Support14/1.jpg
 ---
