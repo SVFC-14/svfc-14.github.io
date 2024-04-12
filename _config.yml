@@ -38,7 +38,7 @@ collections:
 
 exclude:
   - Templates
-  - UserEditor
+  - Site-Editing-Tools
   - /pages/_posts/2011-04-03-Test.md
   - /pages/_posts/2012-04-03-Test.md
   - /pages/_posts/2013-04-03-Test.md
