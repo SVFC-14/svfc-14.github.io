@@ -1,5 +1,5 @@
 ---
 layout: volume
 title: Call Volume
-permalink: /call-colume
+permalink: /call-volume
 ---
