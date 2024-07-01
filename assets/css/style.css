@@ -378,15 +378,15 @@ img{
     font-size: 1.25em;
     text-align: right;
 }
-.yearPages{
+.filterPages{
     padding-bottom: 2em;
 }
-.yearPages li:hover{
+.filterPages li:hover{
     background-color: var(--primaryHighlight);
     border-radius: 10px;
     cursor:pointer;
 }
-.yearPages ul{
+.filterPages ul{
     display: flex;
     flex-direction: row;
     justify-content: left;
@@ -394,12 +394,12 @@ img{
     overflow-x: auto;
     overflow-y: hidden;
 }
-.yearPages ul::-webkit-scrollbar{
+.filterPages ul::-webkit-scrollbar{
     width: 0px;
     height: 5px;
 }
 
-.yearPages li{
+.filterPages li{
     padding-left: .5em;
     padding-right: .5em;
     margin-left: .1em;
@@ -407,18 +407,18 @@ img{
 
     
 }
-.yearPages h1{
+.filterPages h1{
     border-bottom: solid var(--primaryText) 1px;
     
 }
-.yearPages ul{
+.filterPages ul{
     border-radius: 10px;
     background-color: var(--primaryNav);
     padding: 5px;
     padding-top: 8px;
     
 }
-.yearPages .selected{
+.filterPages .selected{
     background-color: var(--primaryColor);
     border-radius: 10px;
 }
@@ -569,6 +569,11 @@ img{
     width: 100px;
     height: 100px;
 }
+
+.volumeParse{
+    display: none;
+}
+
 @media only screen and (max-width: 600px) {
     #titleImg{
         content: url("/assets/img/svfc-text-compressed.png");

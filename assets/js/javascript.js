@@ -7,6 +7,7 @@ const content = document.getElementById("content");
 window.onscroll = () => {
   setNavBG();
 }
+
 function holiday(date){
   if(date.getMonth() === 11 && (date.getDate() === 24 || date.getDate() === 25)){
     console.log("Merry Christmas")

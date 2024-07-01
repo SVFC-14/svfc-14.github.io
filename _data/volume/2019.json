@@ -1,0 +1,75 @@
+{
+    "year":"2019",
+    "january":{
+        "fire" : 15,
+        "mvc" : 4,
+        "ems" : 2,
+        "other" : 6
+    },
+    "febuary":{
+        "fire" : 12,
+        "mvc" : 4,
+        "ems" : 6,
+        "other" : 12
+    },
+    "march":{
+        "fire" : 12,
+        "mvc" : 5,
+        "ems" : 5,
+        "other" : 5
+    },
+    "april":{
+        "fire" : 6,
+        "mvc" : 3,
+        "ems" : 14,
+        "other" : 9
+    },
+    "may":{
+        "fire" : 11,
+        "mvc" : 3,
+        "ems" : 9,
+        "other" : 8
+    },
+    "june":{
+        "fire" : 9,
+        "mvc" : 3,
+        "ems" : 9,
+        "other" : 6
+    },
+    "july":{
+        "fire" : 13,
+        "mvc" : 3,
+        "ems" : 10,
+        "other" : 7
+    },
+    "august":{
+        "fire" : 7,
+        "mvc" : 7,
+        "ems" : 4,
+        "other" : 6
+    },
+    "september":{
+        "fire" : 9,
+        "mvc" : 5,
+        "ems" : 8,
+        "other" : 6
+    },
+    "october":{
+        "fire" : 8,
+        "mvc" : 11,
+        "ems" : 7,
+        "other" : 3
+    },
+    "november":{
+        "fire" : 10,
+        "mvc" : 14,
+        "ems" : 9,
+        "other" : 6
+    },
+    "december":{
+        "fire" : 6,
+        "mvc" : 11,
+        "ems" : 10,
+        "other" : 7
+    }
+}
