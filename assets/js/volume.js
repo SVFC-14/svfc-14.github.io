@@ -121,6 +121,8 @@ var volChart = new Chart(ctx, {
     }]
   },
   options: {
+    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       // changin the lagend colour
       legend: {

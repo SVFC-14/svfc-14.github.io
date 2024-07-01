@@ -22,7 +22,10 @@ layout: base
         {% endfor %}
     </ul>
 </div>
-<canvas id="volChart"></canvas>
+<div style="height: 400px">
+    <canvas id="volChart" ></canvas>
+</div>
+
 
 {% for file in site.data.volume %}
     {% assign currentYear = site.time  | date: "%Y" %}
