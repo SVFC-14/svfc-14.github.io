@@ -1,6 +1,9 @@
 const ctx = document.getElementById('volChart');
 
-const volCollection2 = document.getElementsByClassName("volumeFilter");
+const listElement  = document.getElementById("volumeList")
+const listItemElements = [...listElement.querySelectorAll(':scope > li.sort')];
+
+const volCollection = document.getElementsByClassName("volumeFilter");
 const parseCollection = document.getElementsByClassName("volumeParse");
 
 var masterJSON = {}
@@ -12,14 +15,14 @@ for (let i = 0; i < parseCollection.length; i++) {
 }
 
 
-for (let index = 0; index < volCollection2.length; index++) {
-    volCollection2[index].addEventListener('click', (e) => {
+for (let index = 0; index < volCollection.length; index++) {
+    volCollection[index].addEventListener('click', (e) => {
     const year = e.target.id.slice(0,-7);
     const parseJSON = document.getElementById(year+"-data")
     const finalJSON = JSON.parse(parseJSON.innerText)
-    for(var i = (volCollection2.length - 1); i >= 0; i--)
+    for(var i = (volCollection.length - 1); i >= 0; i--)
     {
-      volCollection2[i].className = "volumeFilter";
+      volCollection[i].className = "volumeFilter";
     }
     // Yes this is not a great solution, but it works doesn't it? Maybe try and clean this up another day
     var yearFilter = document.getElementById(e.target.id); 
@@ -172,3 +175,16 @@ if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').match
   volChart.options.scales.y.ticks.color = "#202225"
   volChart.options.scales.x.ticks.color = "#202225"
 }
+
+function sortList(ul) {
+  var ul = document.getElementById(ul);
+
+  Array.from(ul.getElementsByTagName("LI"))
+    .sort((b, a) => a.textContent.localeCompare(b.textContent))
+    .forEach(li => {
+      ul.appendChild(li) 
+      //console.log(li)
+    });
+}
+
+sortList("volumeList");

@@ -1,13 +1,14 @@
 ---
 layout: base
 ---
+{% assign currentYear = site.time  | date: "%Y" %}
 <div class="filterPages">
     <h1>Filter by Year</h1>
     <ul id="volumeList">
         <!-- <li class="volumeFilter" id="all-volume">
             All
         </li> -->
-        {% for file in site.data.volume reversed%}
+        {% for file in site.data.volume %}
             {% assign currentYear = site.time  | date: "%Y" %}
             {% assign dataYear = file[1] %}
             {% if dataYear.year == currentYear %}
