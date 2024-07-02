@@ -573,9 +573,31 @@ img{
     width: 100px;
     height: 100px;
 }
-
+/* Volume */
 .volumeParse{
     display: none;
+}
+#textStats{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+#textOverall{
+    display: flex;
+    justify-content: center;
+}
+#textOverall p{
+    font-size: 2em;
+    color: var(--primaryText);
+}
+#textMinor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+#textMinor p{
+    font-size: 1.25em;
+    color: var(--primaryText);
 }
 
 @media only screen and (max-width: 600px) {
