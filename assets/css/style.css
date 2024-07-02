@@ -107,7 +107,7 @@ img{
     color: var(--primaryText);
     margin: 0 0.3125em;
     border: var(--debugBox);
-    text-shadow: 0 0 5px var(--primaryNav);
+    /* text-shadow: 0 0 5px var(--primaryNav); */
 }
 
 .navbar ul a:hover{
