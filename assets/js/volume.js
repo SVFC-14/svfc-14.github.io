@@ -187,4 +187,6 @@ function sortList(ul) {
     });
 }
 
-sortList("volumeList");
+window.onload = () => {
+  sortList("volumeList");
+}
