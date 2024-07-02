@@ -213,7 +213,11 @@ img{
     justify-content: space-between;
     flex-direction: row;
 }
-
+.outline{
+    -webkit-text-fill-color: var(--primaryText);
+    -webkit-text-stroke: 1px var(--primaryColor);
+    paint-order: stroke fill;
+}
 /* Showcase */
 .showcase{
     padding: 1.125em 0;
