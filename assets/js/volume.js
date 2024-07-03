@@ -87,7 +87,7 @@ for (let index = 0; index < volCollection.length; index++) {
 var volChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July','Sugust','September', 'October', 'November', 'December'],
+    labels: ['January', 'Febuary', 'March', 'April', 'May', 'June', 'July','August','September', 'October', 'November', 'December'],
     datasets: [{
         label: 'Fire',
         data: [0,0,0,0,0,0,0,0,0,0,0,0],
