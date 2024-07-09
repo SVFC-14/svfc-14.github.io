@@ -1,12 +1,5 @@
-var menuOpen=false;
-const nav = document.getElementById("navbar");
+
 const content = document.getElementById("content");
-
-
-
-window.onscroll = () => {
-  setNavBG();
-}
 
 function holiday(date){
   if(date.getMonth() === 11 && (date.getDate() === 24 || date.getDate() === 25)){
@@ -32,7 +25,6 @@ window.onload = () => {
 function toggleMobileMenu(menu) {
   menuOpen = !menuOpen;
   menu.classList.toggle('open');
-  setNavBG();
 }
 
 function updateCopyright(year){
@@ -74,24 +66,4 @@ function postsYearFilter(filter) {
 function randomBG(){
   const x = "/assets/img/bg.jpg"
   document.getElementById("break").style.backgroundImage = "url('/assets/img/bg2.jpg')"
-}
-function setNavBG(){
-  // Spaghetti
-  if(menuOpen){
-    nav.className = "navbar scrolled navExpand";
-    // Menu Open, Expand it
-  }else{
-    nav.classList.remove("navExpand");
-    // Menu not open, Remove NavExpander
-    var navVP = nav.getBoundingClientRect();
-    var contentVP = content.getBoundingClientRect();
-    var navBot = navVP.bottom;
-    var contentTop = contentVP.top;
-    // Menu is not open, Check Scrolled Position
-    if(contentTop <= navBot){
-      nav.className = "navbar scrolled";
-    }else{
-      nav.className = "navbar";  
-    } 
-  }
 }

@@ -9,7 +9,7 @@ email: svfc@swoopefire.com
 description: >- # this means to ignore newlines until "baseurl:"
   © Swoope Volunteer Fire Comapny. All rights reserved.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://swoopefire.com"
 # facebook_username: SVFC14
 # twitter_username: jekyllrb
 # github_username:  SVFC-14
@@ -47,7 +47,9 @@ exclude:
   - /pages/_posts/2016-04-03-Test.md
   - /pages/_posts/2017-04-03-Test.md
   - /pages/_posts/2018-04-03-Test.md
-  
+  - test.md
+  - /_layouts/test.html
+
 call_threshhold: 30
 
 # exclude:
