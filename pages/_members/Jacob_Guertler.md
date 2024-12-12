@@ -1,7 +1,7 @@
 ---
 firstname: Jacob
 lastname: Guertler
-position: [Active Member]
+position: [Former Member]
 layout: profile
 join_date:
 training: []

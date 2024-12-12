@@ -1,7 +1,7 @@
 ---
 firstname: Robert
 lastname: Grey
-position: [Active Member]
+position: [Former Member]
 layout: profile
 join_date: 2017-06-06 00:00:00 -400
 training: []

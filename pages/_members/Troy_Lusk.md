@@ -1,7 +1,7 @@
 ---
 firstname: Troy
 lastname: Lusk
-position: [Active Member]
+position: [Former Member]
 layout: profile
 join_date: 2023-01-03 00:00:00 -400
 training: []

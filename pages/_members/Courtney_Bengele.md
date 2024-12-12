@@ -1,7 +1,7 @@
 ---
 firstname: Courtney
 lastname: Bengele
-position: [Active Member,Safety Officer]
+position: [Former Member]
 layout: profile
 join_date:
 training: []

@@ -1,7 +1,7 @@
 ---
 firstname: Kerri
 lastname: Lindsay
-position: [Active Member]
+position: [Former Member]
 layout: profile
 join_date:
 training: []
