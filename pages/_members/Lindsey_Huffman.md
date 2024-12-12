@@ -1,7 +1,7 @@
 ---
 firstname: Lindsey
 lastname: Huffman
-position: []
+position: [Probationary Member]
 layout: profile
 join_date: 2024-12-02 00:00:00 -400
 training: []
