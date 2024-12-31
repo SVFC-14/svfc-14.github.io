@@ -446,6 +446,27 @@ img{
     font-size: 1.25em;
     color: var(--primaryText);
 }
+#resourceContainer{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.resourceItem{
+    flex-grow: 1;
+    min-height: 9.375em;
+    margin: 5px;
+    border-left: 0.125em #f4f4ea59 solid;
+    padding-left: 0.3125em;
+}
+.resourceItem:hover{
+    background-color: var(--primaryHighlight);
+    cursor:pointer;
+    border-radius: 10px;
+    
+}
+
+
 /* Mobile */
 @media only screen and (max-width: 600px) {
     #titleImg{
