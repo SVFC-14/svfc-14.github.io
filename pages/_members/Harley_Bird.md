@@ -1,7 +1,7 @@
 ---
 firstname: Harley
 lastname: Bird
-position: [Active Member]
+position: [Active Member, Training Officer]
 layout: profile
 join_date: 2014-10-07 00:00:00 -400
 training: [Firefighter 1,Firefighter 2,HazMat Awareness,HazMat Operations,Vehicle Rescue,CPR]

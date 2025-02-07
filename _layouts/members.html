@@ -266,6 +266,26 @@ layout: base
             {% endfor %}
         </div>
     {% endif %}
+
+    <!-- Begin Honorary -->
+    <br>
+    <h1>Honorary Members</h1>
+    <hr/>
+    <br/>
+    <div class="membershipFlex">
+        {% for member in site.members %}
+        {% if member.position contains "Honorary Member"  %}
+                <div class="memberImg">
+                    <a href="{{ member.url | relative_url }}">
+                        <img src="{{ member.profile }}"></img>
+                        <h1>{{ member.firstname | escape }} {{ member.lastname | escape }}</h1>
+                    </a>
+                </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <!-- End Honorary -->
+    
     <br>
     <h1>Lifetime Members</h1>
     <hr/>

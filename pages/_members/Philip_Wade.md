@@ -1,7 +1,7 @@
 ---
 firstname: Philip
 lastname: Wade
-position: [Active Member]
+position: []
 layout: profile
 join_date: 2013-01-02 00:00:00 -400
 training: []

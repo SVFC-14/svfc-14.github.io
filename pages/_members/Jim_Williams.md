@@ -1,7 +1,7 @@
 ---
 firstname: Jim
 lastname: Williams
-position: [Board Member]
+position: []
 layout: profile
 join_date:
 training: []

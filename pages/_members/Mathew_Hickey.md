@@ -1,9 +1,9 @@
 ---
-firstname: Kylik
-lastname: Scott
-position: [Active Member]
+firstname: Mathew
+lastname: Hickey
+position: [Board Member]
 layout: profile
-join_date:
+join_date: 
 training: []
 profile: /assets/img/members/default/0.png
 ---

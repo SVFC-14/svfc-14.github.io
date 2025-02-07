@@ -1,7 +1,7 @@
 ---
-firstname: Roger
-lastname: Offenbacker
-position: [Active Member]
+firstname: Devon
+lastname: Steed
+position: [Active Member,Lieutenant]
 layout: profile
 join_date: 
 training: []

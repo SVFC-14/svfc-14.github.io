@@ -1,7 +1,7 @@
 ---
 firstname: Linwood
 lastname: Wilkes
-position: [Active Member,Board Member]
+position: [Active Member]
 layout: profile
 join_date:
 training: []

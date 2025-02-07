@@ -1,7 +1,7 @@
 ---
 firstname: CL
 lastname: Rexrode
-position: [Active Member,EMS Lieutenant]
+position: [Active Member,Deputy Chief]
 layout: profile
 join_date:
 training: []
