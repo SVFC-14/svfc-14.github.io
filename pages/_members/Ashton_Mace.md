@@ -1,9 +1,7 @@
 ---
 firstname: Ashton
 lastname: Mace
-position: [Former Member]
 layout: profile
-join_date:
-training: []
-profile: /assets/img/members/default/0.png
+position: [Former Member]profile: /assets/img/members/default/0.png
+userid: 150140098
 ---
