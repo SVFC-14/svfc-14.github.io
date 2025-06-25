@@ -1,75 +1,78 @@
 {
-    "year":2020,
-    "january":{
-        "fire" : 14,
-        "mvc" : 6,
-        "ems" : 4,
-        "other" : 6
+    "year": 2020,
+    "january": {
+        "fire": 14,
+        "mvc": 6,
+        "ems": 4,
+        "other": 6
     },
-    "febuary":{
-        "fire" : 11,
-        "mvc" : 2,
-        "ems" : 8,
-        "other" : 5
+    "febuary": {
+        "fire": 11,
+        "mvc": 2,
+        "ems": 8,
+        "other": 5
     },
-    "march":{
-        "fire" : 6,
-        "mvc" : 5,
-        "ems" : 12,
-        "other" : 5
+    "march": {
+        "fire": 6,
+        "mvc": 5,
+        "ems": 12,
+        "other": 5
     },
-    "april":{
-        "fire" : 5,
-        "mvc" : 4,
-        "ems" : 8,
-        "other" : 9
+    "april": {
+        "fire": 5,
+        "mvc": 4,
+        "ems": 8,
+        "other": 9
     },
-    "may":{
-        "fire" : 6,
-        "mvc" : 1,
-        "ems" : 8,
-        "other" : 4
+    "may": {
+        "fire": 6,
+        "mvc": 1,
+        "ems": 8,
+        "other": 4
     },
-    "june":{
-        "fire" : 6,
-        "mvc" : 8,
-        "ems" : 4,
-        "other" : 6
+    "june": {
+        "fire": 6,
+        "mvc": 8,
+        "ems": 4,
+        "other": 6
     },
-    "july":{
-        "fire" : 9,
-        "mvc" : 6,
-        "ems" : 10,
-        "other" : 11
+    "july": {
+        "fire": 9,
+        "mvc": 6,
+        "ems": 10,
+        "other": 11
     },
-    "august":{
-        "fire" : 11,
-        "mvc" : 6,
-        "ems" : 8,
-        "other" : 21
+    "august": {
+        "fire": 11,
+        "mvc": 6,
+        "ems": 8,
+        "other": 21
     },
-    "september":{
-        "fire" : 11,
-        "mvc" : 7,
-        "ems" : 15,
-        "other" : 7
+    "september": {
+        "fire": 11,
+        "mvc": 7,
+        "ems": 15,
+        "other": 7
     },
-    "october":{
-        "fire" : 2,
-        "mvc" : 3,
-        "ems" : 5,
-        "other" : 4
+    "october": {
+        "fire": 2,
+        "mvc": 3,
+        "ems": 5,
+        "other": 4
     },
-    "november":{
-        "fire" : 9,
-        "mvc" : 9,
-        "ems" : 5,
-        "other" : 10
+    "november": {
+        "fire": 9,
+        "mvc": 9,
+        "ems": 5,
+        "other": 10
     },
-    "december":{
-        "fire" : 12,
-        "mvc" : 8,
-        "ems" : 12,
-        "other" : 4
+    "december": {
+        "fire": 12,
+        "mvc": 8,
+        "ems": 12,
+        "other": 4
+    },
+    "february": {
+        "fire": 2
     }
 }
