@@ -6,7 +6,8 @@ layout: base
     <hr/>
     <br/>
     <div class="membershipFlex">
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
             {% if member.position contains "Chief"  %}
                     <div class="memberImg">
                         <a href="{{ member.url | relative_url }}">
@@ -17,7 +18,8 @@ layout: base
                     </div>
             {% endif %}
         {% endfor %}
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
             {% if member.position contains "Deputy Chief"  %}
                     <div class="memberImg">
                         <a href="{{ member.url | relative_url }}">
@@ -28,7 +30,8 @@ layout: base
                     </div>
             {% endif %}
         {% endfor %}
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
         {% if member.position contains "Captain"  %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
@@ -39,7 +42,8 @@ layout: base
                 </div>
         {% endif %}
     {% endfor %}
-    {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
     {% if member.position contains "Lieutenant"  %}
             <div class="memberImg">
                 <a href="{{ member.url | relative_url }}">
@@ -50,7 +54,8 @@ layout: base
             </div>
     {% endif %}
     {% endfor %}
-    {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
     {% if member.position contains "Sergeant"  %}
             <div class="memberImg">
                 <a href="{{ member.url | relative_url }}">
@@ -61,7 +66,8 @@ layout: base
             </div>
     {% endif %}
     {% endfor %}
-    {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
     {% if member.position contains "EMS Captain"  %}
             <div class="memberImg">
                 <a href="{{ member.url | relative_url }}">
@@ -72,7 +78,8 @@ layout: base
             </div>
     {% endif %}
     {% endfor %}
-    {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
     {% if member.position contains "EMS Lieutenant"  %}
             <div class="memberImg">
                 <a href="{{ member.url | relative_url }}">
@@ -83,7 +90,8 @@ layout: base
             </div>
     {% endif %}
     {% endfor %}
-    {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
     {% if member.position contains "Safety Officer"  %}
             <div class="memberImg">
                 <a href="{{ member.url | relative_url }}">
@@ -94,7 +102,8 @@ layout: base
             </div>
     {% endif %}
     {% endfor %}
-    {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
     {% if member.position contains "Training Officer"  %}
             <div class="memberImg">
                 <a href="{{ member.url | relative_url }}">
@@ -111,7 +120,8 @@ layout: base
     <hr/>
     <br/>
     <div class="membershipFlex">
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
         {% if member.position contains "President"  %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
@@ -122,7 +132,8 @@ layout: base
                 </div>
         {% endif %}
         {% endfor %}
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
         {% if member.position contains "Vice President"  %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
@@ -133,7 +144,8 @@ layout: base
                 </div>
         {% endif %}
         {% endfor %}
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
         {% if member.position contains "Secretary"  %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
@@ -144,7 +156,8 @@ layout: base
                 </div>
         {% endif %}
         {% endfor %}
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
         {% if member.position contains "Treasurer"  %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
@@ -155,7 +168,8 @@ layout: base
                 </div>
         {% endif %}
         {% endfor %}
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
         {% if member.position contains "Chiefs Aide"  %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
@@ -166,7 +180,8 @@ layout: base
                 </div>
         {% endif %}
         {% endfor %}
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
         {% if member.position contains "Operations Manager"  %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
@@ -177,7 +192,8 @@ layout: base
                 </div>
         {% endif %}
         {% endfor %}
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
         {% if member.position contains "Chaplain"  %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
@@ -194,7 +210,8 @@ layout: base
     <hr/>
     <br/>
     <div class="membershipFlex">
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
         {% if member.position contains "Board Member"  %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
@@ -210,8 +227,9 @@ layout: base
     <hr/>
     <br/>
     <div class="membershipFlex">
-        {% for member in site.members %}
-        {% if member.position contains "Active Member"  %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
+        {% if member.position contains "Active Member" %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
                         <img src="{{ member.profile }}"></img>
@@ -240,7 +258,8 @@ layout: base
         <hr/>
         <br/>
         <div class="membershipFlex">
-            {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
             {% if member.position contains "Junior Member"  %}
                     <div class="memberImg">
                         <a href="{{ member.url | relative_url }}">
@@ -250,7 +269,8 @@ layout: base
                     </div>
             {% endif %}
             {% endfor %}
-            {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
 
 
             {% if member.position contains "Probationary Member" %}
@@ -273,7 +293,8 @@ layout: base
     <hr/>
     <br/>
     <div class="membershipFlex">
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
         {% if member.position contains "Honorary Member"  %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
@@ -291,7 +312,8 @@ layout: base
     <hr/>
     <br/>
     <div class="membershipFlex">
-        {% for member in site.members %}
+        {% assign sorted_members = site.members | sort: 'firstname' %}
+        {% for member in sorted_members %}
         {% if member.position contains "Life Member"  %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
