@@ -1,4 +1,8 @@
 {
-  "range": {"start": 1000, "end": 9999},
-  "apparatus_ids": []
+  "range": [
+    1001,
+    5000
+  ],
+  "used": [
+  ]
 }
