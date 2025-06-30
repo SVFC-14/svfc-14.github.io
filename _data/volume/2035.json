@@ -1,0 +1,15 @@
+{
+    "year": 2035,
+    "january": {
+        "fire": 10,
+        "mvc": 15,
+        "ems": 20,
+        "other": 5
+    },
+    "march": {
+        "fire": 8,
+        "mvc": 12,
+        "ems": 16,
+        "other": 4
+    }
+}

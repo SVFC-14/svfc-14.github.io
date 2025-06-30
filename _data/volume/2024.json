@@ -1,0 +1,75 @@
+{
+    "year": 2024,
+    "january": {
+        "fire": 10,
+        "mvc": 8,
+        "ems": 20,
+        "other": 5
+    },
+    "february": {
+        "fire": 4,
+        "mvc": 2,
+        "ems": 8,
+        "other": 1
+    },
+    "march": {
+        "fire": 6,
+        "mvc": 4,
+        "ems": 12,
+        "other": 3
+    },
+    "april": {
+        "fire": 3,
+        "mvc": 2,
+        "ems": 9,
+        "other": 1
+    },
+    "may": {
+        "fire": 7,
+        "mvc": 5,
+        "ems": 15,
+        "other": 4
+    },
+    "june": {
+        "fire": 8,
+        "mvc": 6,
+        "ems": 14,
+        "other": 3
+    },
+    "july": {
+        "fire": 10,
+        "mvc": 7,
+        "ems": 18,
+        "other": 5
+    },
+    "august": {
+        "fire": 9,
+        "mvc": 6,
+        "ems": 16,
+        "other": 4
+    },
+    "september": {
+        "fire": 6,
+        "mvc": 4,
+        "ems": 12,
+        "other": 3
+    },
+    "october": {
+        "fire": 5,
+        "mvc": 3,
+        "ems": 10,
+        "other": 2
+    },
+    "november": {
+        "fire": 4,
+        "mvc": 2,
+        "ems": 8,
+        "other": 1
+    },
+    "december": {
+        "fire": 7,
+        "mvc": 5,
+        "ems": 14,
+        "other": 3
+    }
+}
