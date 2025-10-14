@@ -182,12 +182,12 @@ layout: base
         {% endfor %}
         {% assign sorted_members = site.members | sort: 'firstname' %}
         {% for member in sorted_members %}
-        {% if member.position contains "Operations Manager"  %}
+        {% if member.position contains "Staff Manager"  %}
                 <div class="memberImg">
                     <a href="{{ member.url | relative_url }}">
                         <img src="{{ member.profile }}"></img>
                         <h1>{{ member.firstname | escape }} {{ member.lastname | escape }}</h1>
-                        <h2>Operations Manager</h2>
+                        <h2>Staff Manager</h2>
                     </a>
                 </div>
         {% endif %}
