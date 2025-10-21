@@ -1,0 +1,77 @@
+{
+  "call_data": {
+    "january": {
+      "fire": 0,
+      "mvc": 0,
+      "ems": 0,
+      "other": 0
+    },
+    "february": {
+      "fire": 0,
+      "mvc": 0,
+      "ems": 0,
+      "other": 0
+    },
+    "march": {
+      "fire": 0,
+      "mvc": 0,
+      "ems": 0,
+      "other": 0
+    },
+    "april": {
+      "fire": 0,
+      "mvc": 0,
+      "ems": 0,
+      "other": 0
+    },
+    "may": {
+      "fire": 0,
+      "mvc": 0,
+      "ems": 0,
+      "other": 0
+    },
+    "june": {
+      "fire": 0,
+      "mvc": 0,
+      "ems": 0,
+      "other": 0
+    },
+    "july": {
+      "fire": 0,
+      "mvc": 0,
+      "ems": 0,
+      "other": 0
+    },
+    "august": {
+      "fire": 0,
+      "mvc": 0,
+      "ems": 0,
+      "other": 0
+    },
+    "september": {
+      "fire": 0,
+      "mvc": 0,
+      "ems": 0,
+      "other": 0
+    },
+    "october": {
+      "fire": 0,
+      "mvc": 0,
+      "ems": 0,
+      "other": 0
+    },
+    "november": {
+      "fire": 0,
+      "mvc": 0,
+      "ems": 0,
+      "other": 0
+    },
+    "december": {
+      "fire": 0,
+      "mvc": 0,
+      "ems": 0,
+      "other": 0
+    }
+  },
+  "year": 2015
+}
