@@ -1,0 +1,10 @@
+---
+layout: null
+permalink: api/notifications.json
+---
+
+[
+{% for item in site.data.notifications %}
+  {{ item[1] | jsonify }}{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

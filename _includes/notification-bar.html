@@ -1,0 +1,489 @@
+<!--
+  _includes/notification-bar.html
+  Usage: add include notification-bar.html tag to your layout above your content.
+
+  Fetches /api/notifications.json, filters by current date, and displays
+  active notifications as a scrolling conveyor belt with smooth color
+  transitions between severity levels.
+
+  Tunable via CSS :root variables:
+    --nb-height          bar height (default 40px, 36px on mobile)
+    --nb-font-size       text size  (default 14px, 12px on mobile)
+    --nb-speed           scroll speed in px/s (default 80)
+    --nb-dwell-passes    full loops of a message before switching (default 2)
+    --nb-blend-width     width of the gradient transition stripe in px (default 80)
+    --nb-sev-1-bg through --nb-sev-5-bg   severity background colors (R,G,B)
+-->
+
+<style>
+  :root {
+    --nb-height:       40px;
+    --nb-font-size:    14px;
+    --nb-speed:        80;
+    --nb-dwell-passes: 2;
+    --nb-blend-width:  80;
+
+    /* Severity colors as R,G,B triples for JS interpolation */
+    --nb-sev-1: 26,107,58;     /* low      — green  */
+    --nb-sev-2: 21,101,168;    /* moderate — blue   */
+    --nb-sev-3: 176,92,0;      /* warning  — amber  */
+    --nb-sev-4: 163,32,32;     /* high     — red    */
+    --nb-sev-5: 74,14,107;     /* critical — purple */
+    --nb-sev-default: 68,68,65;
+  }
+
+  #nb-bar {
+    display: none;
+    position: sticky;
+    top: 8vh;
+    width: 100%;
+    height: var(--nb-height);
+    overflow: hidden;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: var(--nb-font-size);
+    z-index: 5;
+  }
+
+  #nb-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  #nb-dots {
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 4px;
+    pointer-events: none;
+  }
+
+  .nb-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.35;
+    transition: opacity 0.3s;
+  }
+
+  .nb-dot.nb-dot-active {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 1023px) {
+    #nb-bar {
+      top: 60px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    :root {
+      --nb-height:    36px;
+      --nb-font-size: 12px;
+      --nb-speed:     55;
+    }
+    #nb-bar {
+      top: 60px;
+    }
+  }
+</style>
+
+<div id="nb-bar" role="marquee" aria-live="polite" aria-label="Active notifications">
+  <canvas id="nb-canvas"></canvas>
+  <div id="nb-dots"></div>
+</div>
+
+{% raw %}
+<script>
+(function () {
+  'use strict';
+
+  /* ── config from CSS ─────────────────────────────────────── */
+
+  const root = getComputedStyle(document.documentElement);
+
+  function cssNum(prop, fallback) {
+    const v = parseFloat(root.getPropertyValue(prop));
+    return isFinite(v) ? v : fallback;
+  }
+
+  function cssRgb(prop, fallback) {
+    const raw = root.getPropertyValue(prop).trim();
+    const parts = raw.split(',').map(Number);
+    return (parts.length === 3 && parts.every(isFinite)) ? parts : fallback;
+  }
+
+  const SEV_RGB = {
+    1: cssRgb('--nb-sev-1', [26,  107, 58]),
+    2: cssRgb('--nb-sev-2', [21,  101, 168]),
+    3: cssRgb('--nb-sev-3', [176, 92,  0]),
+    4: cssRgb('--nb-sev-4', [163, 32,  32]),
+    5: cssRgb('--nb-sev-5', [74,  14,  107]),
+  };
+  const DEF_RGB    = cssRgb('--nb-sev-default', [68, 68, 65]);
+  let   SPEED      = cssNum('--nb-speed',        80);
+  let   DWELL      = cssNum('--nb-dwell-passes', 2);
+  const BLEND_W    = cssNum('--nb-blend-width',  80);
+  const FADE_W     = 52;
+  const TXT_PAD    = 60;
+
+  const ICON_MAP = {
+    warning:      '⚠',
+    info:         'ℹ',
+    alert:        '🔔',
+    error:        '✖',
+    success:      '✔',
+    fire:         '🔥',
+    construction: '🚧',
+  };
+
+  /* ── elements ────────────────────────────────────────────── */
+
+  const bar    = document.getElementById('nb-bar');
+  const canvas = document.getElementById('nb-canvas');
+  const dotsEl = document.getElementById('nb-dots');
+  const ctx    = canvas.getContext('2d');
+
+  const FONT = '500 14px system-ui,-apple-system,sans-serif';
+
+  let W = 0, H = 0, dpr = 1;
+  let raf = null, lastTs = null;
+  let active = [];   // filtered + sorted notifications
+
+  /* ── helpers ─────────────────────────────────────────────── */
+
+  function sevRgb(n) { return SEV_RGB[n.severity] || DEF_RGB; }
+
+  function hex(c) {
+    return '#' + c.map(v => Math.round(Math.max(0, Math.min(255, v)))
+      .toString(16).padStart(2, '0')).join('');
+  }
+
+  function mkLabel(n) {
+    const icon = ICON_MAP[n.icon] || 'ℹ';
+    const body = n.title ? `${n.title}: ${n.message}` : n.message;
+    const link = n.link_url ? ` - ${n.link_url}` : '';
+    return `${icon}  ${body}${link}`;
+  }
+
+  function measure(text) {
+    ctx.font = FONT;
+    return ctx.measureText(text).width;
+  }
+
+  function isActive(n) {
+    const now = new Date();
+    return now >= new Date(n.start_date) && now <= new Date(n.end_date);
+  }
+
+  function resize() {
+    dpr    = devicePixelRatio || 1;
+    W      = bar.clientWidth  || 400;
+    H      = bar.clientHeight || 40;
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  /* ── sequence builder ────────────────────────────────────── */
+
+  /*
+    buildSeq() produces a flat, explicit array of car specs for one full cycle:
+      { type:'msg',   idx }                   — message car
+      { type:'blend', fromIdx, toIdx }        — gradient transition car
+
+    Example — 3 notifications A,B,C with dwellPasses=2:
+      msg(A), msg(A), blend(A→B), msg(B), msg(B), blend(B→C), msg(C), msg(C), blend(C→A)
+
+    Same-severity adjacent notifications share a color so no blend car is inserted.
+    The array repeats forever via seqPos % seq.length.
+  */
+
+  let seq = [], seqPos = 0;
+
+  function buildSeq() {
+    seq = [];
+    const N = active.length;
+    for (let i = 0; i < N; i++) {
+      for (let p = 0; p < DWELL; p++) seq.push({ type: 'msg', idx: i });
+      const nextI = (i + 1) % N;
+      const cA = sevRgb(active[i]);
+      const cB = sevRgb(active[nextI]);
+      if (!cA.every((v, k) => v === cB[k])) {
+        seq.push({ type: 'blend', fromIdx: i, toIdx: nextI });
+      }
+    }
+  }
+
+  function getSpec() { return seq[(seqPos++) % seq.length]; }
+
+  /* ── car factory ─────────────────────────────────────────── */
+
+  /*
+    A car is one unit on the conveyor belt:
+      msg   car: { kind:'msg',   notifIdx, rgb, text, textW, x, carW }
+      blend car: { kind:'blend', rgbFrom, rgbTo, x, carW }
+
+    carW for msg   = max(textW + TXT_PAD*2, W+1)  — always fills the bar
+    carW for blend = BLEND_W                        — narrow gradient stripe
+  */
+
+  function buildCar(spec, x) {
+    if (spec.type === 'msg') {
+      const n     = active[spec.idx];
+      const text  = mkLabel(n);
+      const textW = measure(text);
+      const rgb   = sevRgb(n);
+      const carW  = Math.max(textW + TXT_PAD * 2, W + 1);
+      return { kind: 'msg', notifIdx: spec.idx, rgb, text, textW, x, carW };
+    } else {
+      return {
+        kind:    'blend',
+        rgbFrom: sevRgb(active[spec.fromIdx]),
+        rgbTo:   sevRgb(active[spec.toIdx]),
+        x,
+        carW: BLEND_W,
+      };
+    }
+  }
+
+  /* ── belt state ──────────────────────────────────────────── */
+
+  let cars = [], chainRightX = 0;
+
+  function appendCar() {
+    const car = buildCar(getSpec(), chainRightX);
+    cars.push(car);
+    chainRightX = car.x + car.carW;
+  }
+
+  function initBelt() {
+    cars = []; seqPos = 0; chainRightX = 0;
+    buildSeq();
+    const first = buildCar(getSpec(), 0);
+    cars.push(first);
+    chainRightX = first.carW;
+    while (chainRightX < W * 3) appendCar();
+  }
+
+  function tick(dx) {
+    for (const c of cars) c.x -= dx;
+    chainRightX -= dx;
+    while (cars.length && cars[0].x + cars[0].carW <= 0) cars.shift();
+    while (chainRightX < W * 3) appendCar();
+  }
+
+  /* ── rendering ───────────────────────────────────────────── */
+
+  /*
+    Background: build ONE canvas gradient that spans [0,W] by collecting
+    color stops from every visible car boundary. A single fillRect(0,0,W,H)
+    covers the entire bar with zero seams between cars.
+  */
+
+  function buildBgGradient() {
+    const stops = [];
+
+    function addStop(x, rgb) {
+      stops.push({ cx: Math.max(0, Math.min(W, x)), rgb });
+    }
+
+    for (const c of cars) {
+      if (c.x + c.carW <= 0 || c.x >= W) continue;
+      if (c.kind === 'msg') {
+        addStop(c.x,          c.rgb);
+        addStop(c.x + c.carW, c.rgb);
+      } else {
+        addStop(c.x,          c.rgbFrom);
+        addStop(c.x + c.carW, c.rgbTo);
+      }
+    }
+
+    if (!stops.length) return null;
+
+    stops.sort((a, b) => a.cx - b.cx);
+
+    // Deduplicate same-x stops — last one wins (left car covers right boundary)
+    const deduped = [];
+    for (const s of stops) {
+      if (deduped.length && s.cx === deduped[deduped.length - 1].cx) {
+        deduped[deduped.length - 1] = s;
+      } else {
+        deduped.push(s);
+      }
+    }
+
+    // Ensure full [0,W] coverage
+    if (deduped[0].cx > 0)  deduped.unshift({ cx: 0, rgb: deduped[0].rgb });
+    if (deduped[deduped.length - 1].cx < W) deduped.push({ cx: W, rgb: deduped[deduped.length - 1].rgb });
+
+    const g = ctx.createLinearGradient(0, 0, W, 0);
+    for (const s of deduped) {
+      g.addColorStop(Math.max(0, Math.min(1, s.cx / W)), hex(s.rgb));
+    }
+    return g;
+  }
+
+  function sampleColorAt(px) {
+    const c = cars.find(cc => cc.x <= px && cc.x + cc.carW > px);
+    if (!c) return DEF_RGB;
+    if (c.kind === 'msg') return c.rgb;
+    const t = Math.max(0, Math.min(1, (px - c.x) / c.carW));
+    return c.rgbFrom.map((v, k) => Math.round(v + (c.rgbTo[k] - v) * t));
+  }
+
+  function render() {
+    ctx.clearRect(0, 0, W, H);
+    if (!cars.length) return;
+
+    // Single seamless background gradient
+    const bg = buildBgGradient();
+    if (bg) { ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H); }
+
+    // Text
+    ctx.font = FONT;
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = '#fff';
+    for (const c of cars) {
+      if (c.kind !== 'msg') continue;
+      const tx = c.x + TXT_PAD;
+      if (tx + c.textW <= 0 || tx >= W) continue;
+      ctx.fillText(c.text, tx, H / 2);
+    }
+
+    // Edge fades — match the actual color at each edge
+    const lc = sampleColorAt(1);
+    const rc = sampleColorAt(W - 1);
+
+    let g = ctx.createLinearGradient(0, 0, FADE_W, 0);
+    g.addColorStop(0, hex(lc));
+    g.addColorStop(1, hex(lc) + '00');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, FADE_W, H);
+
+    g = ctx.createLinearGradient(W - FADE_W, 0, W, 0);
+    g.addColorStop(0, hex(rc) + '00');
+    g.addColorStop(1, hex(rc));
+    ctx.fillStyle = g;
+    ctx.fillRect(W - FADE_W, 0, FADE_W, H);
+
+    // Dots
+    if (active.length > 1) {
+      const c = cars.find(cc => cc.x <= W / 2 && cc.x + cc.carW > W / 2);
+      const ci = (c && c.kind === 'msg') ? c.notifIdx : -1;
+      dotsEl.querySelectorAll('.nb-dot')
+        .forEach((d, i) => d.classList.toggle('nb-dot-active', i === ci));
+    }
+  }
+
+  /* ── dots ────────────────────────────────────────────────── */
+
+  function buildDots() {
+    dotsEl.innerHTML = '';
+    if (active.length <= 1) return;
+    active.forEach(() => {
+      const d = document.createElement('div');
+      d.className = 'nb-dot';
+      dotsEl.appendChild(d);
+    });
+  }
+
+  /* ── animation loop ──────────────────────────────────────── */
+
+  let paused = false;
+
+  function animate(ts) {
+    if (paused) { lastTs = null; raf = requestAnimationFrame(animate); return; }
+    if (lastTs === null) lastTs = ts;
+    const dx = SPEED * (ts - lastTs) / 1000;
+    lastTs = ts;
+    tick(dx);
+    render();
+    raf = requestAnimationFrame(animate);
+  }
+
+  /* ── hover pause + click link ────────────────────────────── */
+
+  function normalizeUrl(url) {
+    if (!url) return null;
+    return /^https?:\/\//i.test(url) ? url : 'https://' + url;
+  }
+
+  function carAtMouseX(mouseX) {
+    // Find the msg car whose text region contains mouseX
+    for (const c of cars) {
+      if (c.kind !== 'msg') continue;
+      if (mouseX >= c.x && mouseX < c.x + c.carW) return c;
+    }
+    return null;
+  }
+
+  canvas.addEventListener('mouseenter', () => {
+    paused = true;
+    const c = carAtMouseX(W / 2);
+    const n = c ? active[c.notifIdx] : null;
+    canvas.style.cursor = (n && n.link_url) ? 'pointer' : 'default';
+  });
+
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const c = carAtMouseX(mouseX);
+    const n = c ? active[c.notifIdx] : null;
+    canvas.style.cursor = (n && n.link_url) ? 'pointer' : 'default';
+  });
+
+  canvas.addEventListener('mouseleave', () => {
+    paused = false;
+    canvas.style.cursor = 'default';
+  });
+
+  canvas.addEventListener('click', e => {
+    const rect = canvas.getBoundingClientRect();
+    const mouseX = e.clientX - rect.left;
+    const c = carAtMouseX(mouseX);
+    const n = c ? active[c.notifIdx] : null;
+    const url = n ? normalizeUrl(n.link_url) : null;
+    if (url) window.open(url, '_blank', 'noopener,noreferrer');
+  });
+
+  /* ── init ────────────────────────────────────────────────── */
+
+  function start(notifications) {
+    active = notifications
+      .filter(isActive)
+      .sort((a, b) => (b.severity || 0) - (a.severity || 0));
+
+    if (!active.length) return;
+
+    bar.style.display = 'block';
+    resize();
+    buildDots();
+    initBelt();
+
+    if (raf) cancelAnimationFrame(raf);
+    lastTs = null;
+    raf = requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', () => {
+    if (!active.length) return;
+    resize();
+    initBelt();
+  });
+
+  /* ── fetch ───────────────────────────────────────────────── */
+
+  fetch('/api/notifications.json')
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(data => start(Array.isArray(data) ? data : []))
+    .catch(err => console.warn('[notification-bar] fetch failed:', err));
+
+})();
+</script>
+{% endraw %}

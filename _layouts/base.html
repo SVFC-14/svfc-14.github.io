@@ -11,15 +11,14 @@
       <!--Break-->
       <section class="break" id="break">
           <div class="container grid"></div>
-      </section>  
+      </section>
       <!--Showcase-->
-
-        <section class="showcase" id="content">
-          <div class="container grid">
-            {{ content }}
-          </div>
-        </section>
-
+      <section class="showcase" id="content">
+        {% include notification-bar.html %}
+        <div class="container grid">
+          {{ content }}
+        </div>
+      </section>
       {% include footer.html %}
     </div>
   </body>

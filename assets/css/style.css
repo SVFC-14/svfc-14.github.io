@@ -100,9 +100,8 @@ img{
 }
 /* Showcase */
 .showcase{
-    padding: 1.125em 0;
     background-color: var(--primaryColor);
-    border: var(--debugBox);
+    /* border: var(--debugBox); */
     flex:1;
 }
 .apparatus h1{
