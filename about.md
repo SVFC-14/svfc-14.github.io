@@ -11,7 +11,7 @@ title: About
 
 <br>
 
-### As of July 2018 we boast a roster of 56 members that include 30 certificated Firefighters, 30 EMT's, 14 Exterior Firefighters and 7 Support Members. 
+### As of July 2026 we boast a roster of over 50 members that include 24 certificated Firefighters, 20 EMT's, 17 Exterior Firefighters and 14 Support Members. 
 
 <br/><br/>
 
